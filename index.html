@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>FTIFY</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mainbar">
+        <h1>FTIFY</h1>
+        </div>
+        <aside class="sidebar">
+        <h1>Folder</h1>
+        <h3>a track</h3>
+        </aside>
+        <div class="main">
+        <h1>Main content</h1>
+        </div>
+        <div class="playing"> 
+        <h2 id="mpplaying">Example Track</h2>
+        <h3 id="counter">0:01</h3>
+        </div>
+    </div>
+</body>
+<style>
+body {
+    background-color: black;
+    color: lawngreen;
+    font-family: monospace;
+    padding-left: 200px; 
+    margin: 0; 
+}
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%; 
+    background-color: black; 
+    border-right: 1px solid lawngreen; 
+    text-align: center;
+}
+.main {
+    margin-left: 20px;
+    padding-bottom: 60px; 
+    position: relative; 
+}
+.playing {
+    position: fixed;
+    bottom: 0px; 
+    left: 205px; 
+    width: calc(100% - 205px); 
+    box-sizing: border-box; 
+    background: transparent;
+    border-style: solid;
+    border-color: lawngreen;
+    font-family: monospace;
+    color: lawngreen;
+    text-align: center;
+}
+
+.mainbar {
+    margin-left: 20px;
+    border-color: lawngreen;
+    border-width: 3px;
+}
+
+</style>
+<script>
+const fs = 0;
+let counter = 0;
+let counterm = 0;
+let counterh1 = document.getElementById("counter")
+
+function incrementCounter() {
+    counter++;
+    if (counter < 10)
+        counterh1.textContent = counterm + ":0" + counter;
+    else {
+        counterh1.textContent = counterm + ":" + counter;
+    }
+    if (counter > 58) {
+        counter = 0
+        counterm++
+    }
+}
+
+setInterval(incrementCounter, 1000);
+</script>
+</html>
